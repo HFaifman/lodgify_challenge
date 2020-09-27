@@ -1,11 +1,11 @@
 import React from "react";
 import styled, { CSSObject } from "styled-components";
 import { MEDIUM } from "../../commons/constants/fontsizes";
-import { DISABLED_BUTTON } from "../../commons/constants/colors";
-import { BUTTON_TEXT } from "../../commons/constants/colors";
+import { BUTTON } from "../../commons/constants/colors";
+
 interface IButtonProps {
   text: string;
-  color: string;
+  color?: string;
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   disabled?: boolean;
   style?: CSSObject;
@@ -18,12 +18,12 @@ const StyledButton = styled.button<IButtonProps>`
   border-radius: 5px;
   background: ${({ color }) => color};
   &:disabled {
-    background: ${DISABLED_BUTTON};
+    background: ${BUTTON.DISABLED};
   }
 `;
 
 const StyledSpan = styled.span`
-  color: ${BUTTON_TEXT};
+  color: ${BUTTON.TEXT};
   font-weight: 900;
   font-size: ${MEDIUM};
 `;

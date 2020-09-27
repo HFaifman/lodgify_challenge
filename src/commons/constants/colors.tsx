@@ -1,8 +1,18 @@
-export const BOOKED = "#11A960";
-export const UNAVAILABLE = "#2C64B7";
-export const AVAILABLE = "#11A960";
+export const TAG = {
+  BOOKED: "rgba(44, 100, 183, 1)",
+  UNAVAILABLE: "rgba(224, 35, 35, 1)",
+  AVAILABLE: "rgba(17, 169, 96, 1)",
+  TEXT: "rgba(247, 247, 247, 1)",
+};
+export const BUTTON = {
+  AVAILABLE: "rgba(44, 100, 183, 1)",
+  DISABLED: "#B3B3B3",
+  TEXT: "rgba(255, 255, 255, 1)",
+};
+
+export const BOOKED_TEXT = {
+  TEXT: "rgba(17, 169, 96, 1)",
+};
+
 export const GREY_TEXT = "#999999";
-export const DISABLED_BUTTON = "#B3B3B3";
 export const CARD_BACKGROUND = "rgb(255, 255, 255)";
-export const TAG_TEXT = "rgba(247, 247, 247, 1)";
-export const BUTTON_TEXT = "rgba(255, 255, 255, 1)";

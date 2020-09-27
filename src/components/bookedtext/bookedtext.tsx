@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { CSSObject } from "styled-components";
 import { ReactComponent as OkLogo } from "../../assets/oklogo.svg";
-import { BOOKED } from "../../commons/constants/colors";
+import { BOOKED_TEXT } from "../../commons/constants/colors";
 import { MEDIUM } from "../../commons/constants/fontsizes";
 interface IBookedTextProps {
   days: number;
@@ -9,7 +9,7 @@ interface IBookedTextProps {
 }
 
 const StyledParagraph = styled.p`
-  color: ${BOOKED};
+  color: ${BOOKED_TEXT.TEXT};
   font-size: ${MEDIUM};
 `;
 const StyledDiv = styled.div`
