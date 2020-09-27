@@ -1,12 +1,13 @@
 import React from "react";
 import Placeholder from "../../assets/placeholder.png";
-import styled from "styled-components";
+import styled, { CSSObject } from "styled-components";
 
 interface IImageProps {
   name: string;
   src: string;
   width?: string;
   height?: string;
+  style?: CSSObject;
 }
 
 const StyledImg = styled.img`
@@ -21,17 +22,16 @@ const StyledImg = styled.img`
   border-radius: 5px 5px 0 0;
 `;
 
-const Image = ({ name, src, width, height }: IImageProps) => {
+const StyledDiv = styled.div<Partial<IImageProps>>`
+  position: relative;
+  width: ${({ width }) => width || "13.625rem"};
+  height: ${({ height }) => height || "8.75rem"};
+`;
+const Image = ({ name, src, width, height, style }: IImageProps) => {
   const [loaded, setLoaded] = React.useState(false);
 
   return (
-    <div
-      style={{
-        position: "relative",
-        width: width || "13.625rem",
-        height: height || "8.75rem",
-      }}
-    >
+    <StyledDiv width={width} height={height} style={style}>
       {!loaded ? (
         <StyledImg
           alt={name}
@@ -51,7 +51,7 @@ const Image = ({ name, src, width, height }: IImageProps) => {
           display: loaded ? "block" : "none",
         }}
       />
-    </div>
+    </StyledDiv>
   );
 };
 
