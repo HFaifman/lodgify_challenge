@@ -1,21 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import { ReactComponent as OkLogo } from "../../assets/oklogo.svg";
 import { BOOKED } from "../../commons/constants/colors";
 import { MEDIUM } from "../../commons/constants/fontsizes";
 interface IBookedTextProps {
   days: string;
 }
-
-const StyledCheckMark = styled.div`
-  padding-right: 0.4rem;
-  &:after {
-    content: "✓";
-    padding: 3px;
-    border: 1px solid ${BOOKED};
-    color: ${BOOKED};
-    border-radius: 50%;
-  }
-`;
 
 const StyledParagraph = styled.p`
   color: ${BOOKED};
@@ -24,13 +14,14 @@ const StyledParagraph = styled.p`
 `;
 const StyledDiv = styled.div`
   display: flex;
+  align-items: center;
 `;
 
 const BookedText = (props: IBookedTextProps) => {
   const { days, ...rest } = props;
   return (
     <StyledDiv {...rest}>
-      <StyledCheckMark />
+      <OkLogo style={{ paddingRight: "0.4rem" }} />
       <StyledParagraph>Booked for {days} days</StyledParagraph>
     </StyledDiv>
   );
