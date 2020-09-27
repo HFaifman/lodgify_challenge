@@ -10,7 +10,6 @@ interface IBookedTextProps {
 const StyledParagraph = styled.p`
   color: ${BOOKED};
   font-size: ${MEDIUM};
-  align-self: flex-end;
 `;
 const StyledDiv = styled.div`
   display: flex;
