@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { BOOKED } from "../../commons/constants/colors";
+import { MEDIUM } from "../../commons/constants/fontsizes";
 interface IBookedTextProps {
   days: string;
 }
@@ -18,6 +19,7 @@ const StyledCheckMark = styled.div`
 
 const StyledParagraph = styled.p`
   color: ${BOOKED};
+  font-size: ${MEDIUM};
 `;
 const StyledDiv = styled.div`
   display: flex;

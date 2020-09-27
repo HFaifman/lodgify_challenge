@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
+import { SMALL } from "../../commons/constants/fontsizes";
 interface ITagProps {
   text: string;
   color: string;
@@ -12,7 +12,7 @@ const StyledSpan = styled.span<ITagProps>`
   color: #f7f7f7;
   font-weight: 700;
   background: ${({ color }) => color};
-  font-size: 0.75rem;
+  font-size: ${SMALL};
 `;
 
 const Tag = (props: ITagProps) => {
