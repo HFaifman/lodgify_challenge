@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { CSSObject } from "styled-components";
 import { MEDIUM, LARGE } from "../../commons/constants/fontsizes";
-import { GREY_TEXT } from "../../commons/constants/colors";
+import { PARAGRAPH } from "../../commons/constants/colors";
 
 interface IParagraphProps extends React.HTMLAttributes<IParagraphProps> {
   small?: boolean;
@@ -12,7 +12,7 @@ interface IParagraphProps extends React.HTMLAttributes<IParagraphProps> {
 const StyledSmallParagraph = styled.p`
   font-weight: 400;
   font-size: ${MEDIUM};
-  color: ${GREY_TEXT};
+  color: ${PARAGRAPH.TEXT};
   max-width: 90%;
   text-overflow: ellipsis;
   overflow: hidden;

@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "../image/image";
-import { CARD_BACKGROUND, BUTTON } from "../../commons/constants/colors";
+import { CARD, BUTTON } from "../../commons/constants/colors";
 import Tag from "../tag/tag";
 import Paragraph from "../paragraph/paragraph";
 import BookedText from "../bookedtext/bookedtext";
@@ -18,7 +18,7 @@ const StyledArticle = styled.article`
   border-radius: 0 0 5px 5px;
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.05);
   padding-bottom: 1rem;
-  background: ${CARD_BACKGROUND};
+  background: ${CARD.BACKGROUND};
   &:hover {
     border: 1px solid rgba(51, 51, 51, 1);
     border-radius: 5px;

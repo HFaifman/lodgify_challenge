@@ -14,5 +14,10 @@ export const BOOKED_TEXT = {
   TEXT: "rgba(17, 169, 96, 1)",
 };
 
-export const GREY_TEXT = "#999999";
-export const CARD_BACKGROUND = "rgb(255, 255, 255)";
+export const PARAGRAPH = {
+  TEXT: "#999999",
+};
+
+export const CARD = {
+  BACKGROUND: "rgb(255, 255, 255)",
+};
