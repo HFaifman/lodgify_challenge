@@ -8,12 +8,11 @@ interface IBookedTextProps {
 const StyledCheckMark = styled.div`
   padding-right: 0.4rem;
   &:after {
-    content: "✔";
+    content: "✓";
     padding: 3px;
     border: 1px solid ${BOOKED};
     color: ${BOOKED};
     border-radius: 50%;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
   }
 `;
 
