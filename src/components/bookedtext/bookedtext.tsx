@@ -1,10 +1,11 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { CSSObject } from "styled-components";
 import { ReactComponent as OkLogo } from "../../assets/oklogo.svg";
 import { BOOKED } from "../../commons/constants/colors";
 import { MEDIUM } from "../../commons/constants/fontsizes";
 interface IBookedTextProps {
-  days: string;
+  days: number;
+  style?: CSSObject;
 }
 
 const StyledParagraph = styled.p`
@@ -17,9 +18,9 @@ const StyledDiv = styled.div`
 `;
 
 const BookedText = (props: IBookedTextProps) => {
-  const { days, ...rest } = props;
+  const { days, style } = props;
   return (
-    <StyledDiv {...rest}>
+    <StyledDiv style={style}>
       <OkLogo style={{ paddingRight: "0.4rem" }} />
       <StyledParagraph>Booked for {days} days</StyledParagraph>
     </StyledDiv>

@@ -1,9 +1,13 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { CSSObject } from "styled-components";
 import { MEDIUM } from "../../commons/constants/fontsizes";
+import { DISABLED_BUTTON } from "../../commons/constants/colors";
 interface IButtonProps {
   text: string;
   color: string;
+  onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  disabled?: boolean;
+  style?: CSSObject;
 }
 
 const StyledButton = styled.button<IButtonProps>`
@@ -12,6 +16,9 @@ const StyledButton = styled.button<IButtonProps>`
   border: none;
   border-radius: 5px;
   background: ${({ color }) => color};
+  &:disabled {
+    background: ${DISABLED_BUTTON};
+  }
 `;
 
 const StyledSpan = styled.span`
@@ -21,9 +28,15 @@ const StyledSpan = styled.span`
 `;
 
 const Button = (props: IButtonProps) => {
-  const { text, color, ...rest } = props;
+  const { text, color, style, disabled, onClick } = props;
   return (
-    <StyledButton text={text} color={color} {...rest}>
+    <StyledButton
+      text={text}
+      color={color}
+      style={style}
+      onClick={onClick}
+      disabled={disabled}
+    >
       <StyledSpan>{text}</StyledSpan>
     </StyledButton>
   );

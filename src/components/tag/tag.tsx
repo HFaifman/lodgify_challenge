@@ -1,9 +1,10 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { CSSObject } from "styled-components";
 import { SMALL } from "../../commons/constants/fontsizes";
-interface ITagProps {
+interface ITagProps extends React.HTMLAttributes<ITagProps> {
   text: string;
   color: string;
+  style?: CSSObject;
 }
 
 const StyledSpan = styled.span<ITagProps>`
@@ -16,9 +17,9 @@ const StyledSpan = styled.span<ITagProps>`
 `;
 
 const Tag = (props: ITagProps) => {
-  const { color, text, ...rest } = props;
+  const { color, text, style } = props;
   return (
-    <StyledSpan color={color} text={text} {...rest}>
+    <StyledSpan color={color} text={text} style={style}>
       {text}
     </StyledSpan>
   );

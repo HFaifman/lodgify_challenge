@@ -1,11 +1,12 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { CSSObject } from "styled-components";
 import { MEDIUM, LARGE } from "../../commons/constants/fontsizes";
 import { GREY_TEXT } from "../../commons/constants/colors";
 
-interface IParagraphProps {
+interface IParagraphProps extends React.HTMLAttributes<IParagraphProps> {
   small?: boolean;
   text: string;
+  style?: CSSObject;
 }
 
 const StyledSmallParagraph = styled.p`
@@ -14,7 +15,6 @@ const StyledSmallParagraph = styled.p`
   color: ${GREY_TEXT};
   max-width: 90%;
   text-overflow: ellipsis;
-  white-space: nowrap;
   overflow: hidden;
 `;
 
@@ -24,16 +24,15 @@ const StyledBigParagraph = styled.p`
   font-style: italic;
   max-width: 90%;
   text-overflow: ellipsis;
-  white-space: nowrap;
   overflow: hidden;
 `;
 
 const Paragraph = (props: IParagraphProps) => {
-  const { text, small, ...rest } = props;
+  const { text, small, style } = props;
   return small ? (
-    <StyledSmallParagraph {...rest}>{text}</StyledSmallParagraph>
+    <StyledSmallParagraph style={style}>{text}</StyledSmallParagraph>
   ) : (
-    <StyledBigParagraph {...rest}>{text}</StyledBigParagraph>
+    <StyledBigParagraph style={style}>{text}</StyledBigParagraph>
   );
 };
 export default Paragraph;
