@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
+import { MEDIUM } from "../../commons/constants/fontsizes";
 interface IButtonProps {
   text: string;
   color: string;
@@ -16,7 +16,8 @@ const StyledButton = styled.button<IButtonProps>`
 
 const StyledSpan = styled.span`
   color: #f7f7f7;
-  font-weight: 700;
+  font-weight: 900;
+  font-size: ${MEDIUM};
 `;
 
 const Button = (props: IButtonProps) => {
