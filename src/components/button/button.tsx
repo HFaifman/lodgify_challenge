@@ -2,6 +2,7 @@ import React from "react";
 import styled, { CSSObject } from "styled-components";
 import { MEDIUM } from "../../commons/constants/fontsizes";
 import { DISABLED_BUTTON } from "../../commons/constants/colors";
+import { BUTTON_TEXT } from "../../commons/constants/colors";
 interface IButtonProps {
   text: string;
   color: string;
@@ -22,7 +23,7 @@ const StyledButton = styled.button<IButtonProps>`
 `;
 
 const StyledSpan = styled.span`
-  color: #f7f7f7;
+  color: ${BUTTON_TEXT};
   font-weight: 900;
   font-size: ${MEDIUM};
 `;
