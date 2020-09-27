@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
+import { BOOKED } from "../../commons/constants/colors";
 interface IBookedTextProps {
   days: string;
 }
@@ -10,15 +10,15 @@ const StyledCheckMark = styled.div`
   &:after {
     content: "✔";
     padding: 3px;
-    border: 1px solid #11a960;
-    color: #11a960;
+    border: 1px solid ${BOOKED};
+    color: ${BOOKED};
     border-radius: 50%;
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
   }
 `;
 
 const StyledParagraph = styled.p`
-  color: #11a960;
+  color: ${BOOKED};
 `;
 const StyledDiv = styled.div`
   display: flex;
