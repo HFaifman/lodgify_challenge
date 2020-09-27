@@ -38,7 +38,6 @@ const Image = ({ name, src, width, height }: IImageProps) => {
           src={Placeholder}
           style={{
             borderRadius: "0",
-            display: !loaded ? "block" : "none",
           }}
         />
       ) : null}
