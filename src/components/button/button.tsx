@@ -6,7 +6,7 @@ import { BUTTON_TEXT } from "../../commons/constants/colors";
 interface IButtonProps {
   text: string;
   color: string;
-  onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   disabled?: boolean;
   style?: CSSObject;
 }
