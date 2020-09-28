@@ -13,11 +13,13 @@ interface IButtonProps {
 
 const StyledButton = styled.button<IButtonProps>`
   padding: 1rem;
+  cursor: pointer;
   appearance: none;
   border: none;
   border-radius: 5px;
   background: ${({ color }) => color};
   &:disabled {
+    cursor: auto;
     background: ${BUTTON.DISABLED};
   }
 `;
