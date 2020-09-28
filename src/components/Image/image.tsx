@@ -20,7 +20,6 @@ const StyledImg = styled.img`
   width: 100%;
   height: 100%;
   position: absolute;
-  border-radius: 5px 5px 0 0;
 `;
 
 const StyledDiv = styled.div<Partial<IImageProps>>`

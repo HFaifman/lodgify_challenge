@@ -19,11 +19,10 @@ const StyledArticle = styled.article`
   overflow: hidden;
   position: relative;
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.05);
-  border-radius: 0 0 5px 5px;
+  border-radius: 5px;
 
   &:hover {
     border: 1px solid rgba(51, 51, 51, 1);
-    border-radius: 5px;
     box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.15);
   }
 `;
