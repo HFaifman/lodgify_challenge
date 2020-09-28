@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "../image/image";
 import { CARD, BUTTON } from "../../commons/constants/colors";
+import { CARD_WIDTH } from "../../commons/constants/sizes";
 import Tag from "../tag/tag";
 import Paragraph from "../paragraph/paragraph";
 import BookedText from "../bookedtext/bookedtext";
@@ -14,11 +15,10 @@ interface ICardProps {
 }
 
 const StyledArticle = styled.article`
-  width: 13.625rem;
+  width: ${CARD_WIDTH};
   overflow: hidden;
   position: relative;
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.05);
-
   border-radius: 0 0 5px 5px;
 
   &:hover {
@@ -38,7 +38,7 @@ const Card = ({ house }: ICardProps) => {
 
   return (
     <StyledArticle>
-      <Image name={house.name} src={house.image} />
+      <Image name={house.name} src={house.image} width="100%" />
       <Tag
         text={tagStatus.text}
         color={tagStatus.color}

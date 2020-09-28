@@ -1,4 +1,5 @@
 import React from "react";
+import { IMAGE } from "../../commons/constants/sizes";
 import Placeholder from "../../assets/placeholder.png";
 import styled, { CSSObject } from "styled-components";
 
@@ -24,8 +25,8 @@ const StyledImg = styled.img`
 
 const StyledDiv = styled.div<Partial<IImageProps>>`
   position: relative;
-  width: ${({ width }) => width || "13.625rem"};
-  height: ${({ height }) => height || "8.75rem"};
+  width: ${({ width }) => width || IMAGE.width};
+  height: ${({ height }) => height || IMAGE.height};
 `;
 const Image = ({ name, src, width, height, style }: IImageProps) => {
   const [loaded, setLoaded] = React.useState(false);
