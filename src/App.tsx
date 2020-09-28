@@ -1,6 +1,7 @@
 import React from "react";
 import Grid from "./components/grid/grid";
 import Card from "./components/card/card";
+import Paragraph from "./components/paragraph/paragraph";
 import Spinner from "./components/spinner/spinner";
 import GlobalStyles from "./commons/globalstyles/globalstyles";
 import fetchHouses from "./api/fetchhouses/fetchhouses";
@@ -16,23 +17,37 @@ const StyledDiv = styled.div`
 `;
 
 const App = () => {
-  const [loading, setLoading] = React.useState(true);
+  const [loading, setLoading] = React.useState({
+    fetching: true,
+    error: false,
+  });
   const [houses, setHouses] = React.useState<House[]>([]);
 
   React.useEffect(() => {
     const getHouses = async () => {
-      const houses = await fetchHouses();
-      setHouses(houses);
-      setLoading(false);
+      try {
+        const houses = await fetchHouses();
+        setHouses(houses);
+        setLoading({ fetching: false, error: false });
+      } catch (error) {
+        setLoading({ fetching: false, error: true });
+      }
     };
     getHouses();
   }, []);
+
+  const { fetching, error } = loading;
   return (
     <>
       <GlobalStyles />
-      {loading && (
+      {fetching && (
         <StyledDiv>
           <Spinner />
+        </StyledDiv>
+      )}
+      {error && (
+        <StyledDiv>
+          <Paragraph text="There was an error while fetching :(" />
         </StyledDiv>
       )}
       <Grid>
