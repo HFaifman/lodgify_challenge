@@ -26,7 +26,7 @@ const StyledArticle = styled.article`
   border-radius: 5px;
 
   &:hover {
-    border: 0.5px solid rgba(51, 51, 51, 1);
+    border: 1px solid rgba(51, 51, 51, 1);
     box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.15);
   }
 `;
