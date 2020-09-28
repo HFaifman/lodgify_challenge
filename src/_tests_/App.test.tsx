@@ -43,7 +43,7 @@ test("Loads booked house", async () => {
   });
 });
 
-test("Loads unaivalable house", async () => {
+test("Loads unavailable house", async () => {
   const house = MOCK.MOCK_RESPONSE_NOT_BOOKABLE;
   global.fetch = jest
     .fn()
