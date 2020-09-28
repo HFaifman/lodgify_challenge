@@ -34,7 +34,7 @@ const Image = ({ name, src, width, height, style }: IImageProps) => {
     <StyledDiv width={width} height={height} style={style}>
       {!loaded ? (
         <StyledImg
-          alt={name}
+          alt={"placeholder"}
           src={Placeholder}
           style={{
             borderRadius: "0",
