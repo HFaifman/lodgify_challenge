@@ -15,10 +15,8 @@ interface ICardProps {
 
 const StyledArticle = styled.article`
   width: 13.625rem;
-  border-radius: 0 0 5px 5px;
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.05);
-  padding-bottom: 1rem;
-  background: ${CARD.BACKGROUND};
+
   &:hover {
     border: 1px solid rgba(51, 51, 51, 1);
     border-radius: 5px;
@@ -26,7 +24,9 @@ const StyledArticle = styled.article`
 `;
 
 const StyledDiv = styled.div`
-  margin: 1rem 1rem 0 1rem;
+  padding: 1rem 1rem 1rem 1rem;
+  border-radius: 0 0 5px 5px;
+  background: ${CARD.BACKGROUND};
 `;
 const Card = ({ house }: ICardProps) => {
   const status = isBookable(house);
@@ -37,7 +37,7 @@ const Card = ({ house }: ICardProps) => {
       return (
         <BookedText
           days={status}
-          style={{ marginTop: "1rem", paddingBottom: "0.5rem" }}
+          style={{ marginTop: "1rem", paddingBottom: "1rem" }}
         />
       );
     }
@@ -45,7 +45,7 @@ const Card = ({ house }: ICardProps) => {
     if (status === false) {
       return (
         <Button
-          style={{ width: "100%", marginTop: "1rem" }}
+          style={{ width: "100%", marginTop: "0.5rem" }}
           disabled
           text="Not Bookable"
         />
@@ -53,7 +53,7 @@ const Card = ({ house }: ICardProps) => {
     }
     return (
       <Button
-        style={{ width: "100%", marginTop: "1rem" }}
+        style={{ width: "100%", marginTop: "0.5rem" }}
         color={BUTTON.AVAILABLE}
         text="Book"
       />
@@ -69,11 +69,7 @@ const Card = ({ house }: ICardProps) => {
         style={{ position: "absolute", top: "10px", left: "10px" }}
       />
       <StyledDiv>
-        <Paragraph
-          style={{ width: "100%", marginTop: "1rem" }}
-          small
-          text={house.id}
-        />
+        <Paragraph style={{ width: "100%" }} small text={house.id} />
         <Paragraph text={house.name} />
         {decideButtonComponent(status)}
       </StyledDiv>
