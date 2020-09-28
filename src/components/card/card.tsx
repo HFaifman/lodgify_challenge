@@ -20,6 +20,7 @@ const StyledArticle = styled.article`
   &:hover {
     border: 1px solid rgba(51, 51, 51, 1);
     border-radius: 5px;
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.15);
   }
 `;
 
