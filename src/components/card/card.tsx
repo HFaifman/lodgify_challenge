@@ -69,7 +69,7 @@ const Card = ({ house }: ICardProps) => {
         style={{ position: "absolute", top: "10px", left: "10px" }}
       />
       <StyledDiv>
-        <Paragraph style={{ width: "100%" }} small text={house.id} />
+        <Paragraph style={{ width: "100%" }} small text={`Id: ${house.id}`} />
         <Paragraph text={house.name} />
         {decideButtonComponent(status)}
       </StyledDiv>
