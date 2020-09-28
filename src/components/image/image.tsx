@@ -13,17 +13,11 @@ interface IImageProps {
 
 const StyledImg = styled.img`
   object-fit: cover;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
   width: 100%;
   height: 100%;
-  position: absolute;
 `;
 
 const StyledDiv = styled.div<Partial<IImageProps>>`
-  position: relative;
   width: ${({ width }) => width || IMAGE.width};
   height: ${({ height }) => height || IMAGE.height};
 `;
