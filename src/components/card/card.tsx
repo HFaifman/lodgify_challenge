@@ -18,7 +18,7 @@ const StyledArticle = styled.article`
   overflow: hidden;
   position: relative;
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.05);
-  background: ${CARD.BACKGROUND};
+
   border-radius: 0 0 5px 5px;
 
   &:hover {
@@ -30,6 +30,8 @@ const StyledArticle = styled.article`
 
 const StyledDiv = styled.div`
   padding: 1rem;
+  height: 100%;
+  background: ${CARD.BACKGROUND};
 `;
 const Card = ({ house }: ICardProps) => {
   const tagStatus = getTagStatus(house);
