@@ -2,6 +2,10 @@ import React from "react";
 import Image from "../image/image";
 import { CARD, BUTTON } from "../../commons/constants/colors";
 import { CARD_WIDTH } from "../../commons/constants/sizes";
+import {
+  BUTTON as BUTTON_TEXT,
+  ID_PARAGRAPH,
+} from "../../commons/constants/texts";
 import Tag from "../tag/tag";
 import Paragraph from "../paragraph/paragraph";
 import BookedText from "../bookedtext/bookedtext";
@@ -44,7 +48,11 @@ const Card = ({ house }: ICardProps) => {
         style={{ position: "absolute", top: "10px", left: "10px" }}
       />
       <StyledDiv>
-        <Paragraph style={{ width: "100%" }} small text={`Id: ${house.id}`} />
+        <Paragraph
+          style={{ width: "100%" }}
+          small
+          text={`${ID_PARAGRAPH}${house.id}`}
+        />
         <Paragraph text={house.name} />
         {house.booked > 0 ? (
           <BookedText
@@ -56,7 +64,9 @@ const Card = ({ house }: ICardProps) => {
             disabled={!house.bookable}
             style={{ width: "100%", marginTop: "0.5rem" }}
             color={house.bookable ? BUTTON.AVAILABLE : ""}
-            text={house.bookable ? "Book" : "Not Bookable"}
+            text={
+              house.bookable ? BUTTON_TEXT.BOOKABLE : BUTTON_TEXT.NOT_BOOKABLE
+            }
           />
         )}
       </StyledDiv>
