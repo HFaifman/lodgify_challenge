@@ -10,3 +10,5 @@ export const BUTTON = {
 };
 
 export const ID_PARAGRAPH = "Id: ";
+
+export const FETCH_ERROR_TEXT = "There was an error while fetching :(";

@@ -17,7 +17,7 @@ test("Loads error when fetch fails and doesn´t load spinner", async () => {
   const { getByText, queryByTestId } = render(<App />);
   await waitForDomChange();
   expect(queryByTestId("Spinner")).toBeFalsy();
-  expect(getByText("There was an error while fetching :(")).toBeInTheDocument();
+  expect(getByText(TEXTS.FETCH_ERROR_TEXT)).toBeInTheDocument();
 });
 
 test("Loads booked house", async () => {

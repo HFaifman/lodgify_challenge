@@ -7,6 +7,7 @@ import GlobalStyles from "./commons/globalstyles/globalstyles";
 import fetchHouses from "./api/fetchhouses/fetchhouses";
 import { House } from "./api/interfaces/house";
 import styled from "styled-components";
+import { FETCH_ERROR_TEXT } from "./commons/constants/texts";
 
 const StyledDiv = styled.div`
   display: flex;
@@ -47,7 +48,7 @@ const App = () => {
       )}
       {error && (
         <StyledDiv>
-          <Paragraph text="There was an error while fetching :(" />
+          <Paragraph text={FETCH_ERROR_TEXT} />
         </StyledDiv>
       )}
       <Grid>
