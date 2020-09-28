@@ -8,8 +8,8 @@ interface IGridProps {
 
 const StyledSection = styled.section`
   display: grid;
-  padding: 1em;
-  grid-gap: 2em;
+  padding: 1rem;
+  grid-gap: 2rem;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 `;
 
