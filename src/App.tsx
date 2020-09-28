@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Grid from "./components/grid/grid";
+import Card from "./components/card/card";
+import GlobalStyles from "./commons/globalstyles/globalstyles";
+import fetchHouses from "./api/fetchhouses/fetchhouses";
+import { House } from "./api/interfaces/house";
 
-function App() {
+const App = () => {
+  const [houses, setHouses] = React.useState<House[]>([]);
+
+  React.useEffect(() => {
+    const getHouses = async () => {
+      const houses = await fetchHouses();
+      setHouses(houses);
+    };
+    getHouses();
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyles />
+      <Grid>
+        {houses.map((house) => (
+          <Card key={house.id} house={house} />
+        ))}
+      </Grid>
+    </>
   );
-}
+};
 
 export default App;
