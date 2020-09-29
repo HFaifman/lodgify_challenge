@@ -6,8 +6,8 @@ import * as TEXTS from "../commons/constants/texts";
 
 test("Loads spinner on first load", async () => {
   global.fetch = jest.fn().mockImplementation(() => []);
-  const { queryByTestId } = render(<App />);
-  const Spinner = queryByTestId("Spinner");
+  const { getByTestId } = render(<App />);
+  const Spinner = getByTestId("Spinner");
   expect(Spinner).toBeInTheDocument();
   await waitForDomChange();
 });
